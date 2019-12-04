@@ -11,29 +11,32 @@ namespace SeleniumFirst
 {
     class Program
     {
-        IWebDriver driver = new ChromeDriver();
         static void Main(string[] args)
         {
         }
         [SetUp]
         public void Initialize()
         {
-            driver.Navigate().GoToUrl("http://www.executeautomation.com/demosite/index.html");
+            PropertiesCollection.driver = new ChromeDriver();
+            PropertiesCollection.driver.Navigate().GoToUrl("http://www.executeautomation.com/demosite/index.html");
         }
         [Test]
         public void ExecuteTest()
         {
             //Title 
-            SeleniumSetMethods.SelectDropDown(driver, "TitleId", "Mr.", "Id");
+            SeleniumSetMethods.SelectDropDown("TitleId", "Mr.", "Id");
             //Initial
-            SeleniumSetMethods.EnterText(driver, "Initial", "Sevo", "Name");
+            SeleniumSetMethods.EnterText("Initial", "Sevo", "Name");
+            Console.WriteLine("The value from my title" + SeleniumGetMethods.GetText("TitleId", "Id"));
+            Console.WriteLine("The value from my title" + SeleniumGetMethods.GetText("Initial", "Name"));
+
             //Click
-            SeleniumSetMethods.Click(driver, "Save", "Name");
+            SeleniumSetMethods.Click("Save", "Name");
         }
         [TearDown]
         public void CleanUp()
         {
-            driver.Close();
+            PropertiesCollection.driver.Close();
             Console.WriteLine("closed the browser");
         }
     }
