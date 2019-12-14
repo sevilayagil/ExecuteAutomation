@@ -24,14 +24,14 @@ namespace SeleniumFirst
         public void ExecuteTest()
         {
             //Title 
-            SeleniumSetMethods.SelectDropDown("TitleId", "Mr.", "Id");
+            SeleniumSetMethods.SelectDropDown("TitleId", "Mr.", PropertyType.Id);
             //Initial
-            SeleniumSetMethods.EnterText("Initial", "Sevo", "Name");
-            Console.WriteLine("The value from my title" + SeleniumGetMethods.GetText("TitleId", "Id"));
-            Console.WriteLine("The value from my title" + SeleniumGetMethods.GetText("Initial", "Name"));
+            SeleniumSetMethods.EnterText("Initial", "Sevo", PropertyType.Name);
+            Console.WriteLine("The value from my title" + SeleniumGetMethods.GetText("TitleId", PropertyType.Id));
+            Console.WriteLine("The value from my title" + SeleniumGetMethods.GetText("Initial", PropertyType.Name));
 
             //Click
-            SeleniumSetMethods.Click("Save", "Name");
+            SeleniumSetMethods.Click("Save", PropertyType.Name);
         }
         [TearDown]
         public void CleanUp()
