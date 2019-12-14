@@ -7,6 +7,15 @@ using System.Threading.Tasks;
 
 namespace SeleniumFirst
 {
+    enum PropertyType
+    {
+        Id,
+        Name,
+        LinkText,
+        ClassName,
+        CssName,
+        XPath
+    }
     class PropertiesCollection
     {
        public static IWebDriver driver { get; set; }
