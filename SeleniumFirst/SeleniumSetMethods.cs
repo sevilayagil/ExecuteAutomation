@@ -10,7 +10,7 @@ namespace SeleniumFirst
 {
     class SeleniumSetMethods
     {
-        //EnterText
+        //EnterText method
         public static void EnterText(string element, string value, PropertyType elementtype)
         {
             if (elementtype == PropertyType.Id)
@@ -18,7 +18,7 @@ namespace SeleniumFirst
             if (elementtype == PropertyType.Name)
                 PropertiesCollection.driver.FindElement(By.Name(element)).SendKeys(value);
         }
-        //Click into button,checkbox,option...
+        //Click method into button,checkbox,option...
         public static void Click(string element, PropertyType elementtype)
         {
             if (elementtype == PropertyType.Id)
@@ -26,7 +26,7 @@ namespace SeleniumFirst
             if (elementtype == PropertyType.Name)
                 PropertiesCollection.driver.FindElement(By.Name(element)).Click();
         }
-        //Selecting a drop down control
+        //Selecting method a drop down control
         public static void SelectDropDown(string element, string value, PropertyType elementtype)
         {
             if (elementtype == PropertyType.Id)

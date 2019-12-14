@@ -10,6 +10,7 @@ namespace SeleniumFirst
 {
     class SeleniumGetMethods
     {
+        //Gettext method
         public static string GetText(string element, PropertyType elementtype)
         {
             if (elementtype == PropertyType.Id)
@@ -18,6 +19,7 @@ namespace SeleniumFirst
                 return PropertiesCollection.driver.FindElement(By.Name(element)).GetAttribute("value");
             else return String.Empty;
         }
+        //GetTextFromDDL method
         public static string GetTextFromDDL(string element, PropertyType elementtype)
         {
             if (elementtype == PropertyType.Id)
