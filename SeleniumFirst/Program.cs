@@ -37,7 +37,7 @@ namespace SeleniumFirst
         public void CleanUp()
         {
             PropertiesCollection.driver.Close();
-            Console.WriteLine("closed the browser");
+            Console.WriteLine("Closed the browser");
         }
     }
 }
