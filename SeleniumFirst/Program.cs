@@ -18,20 +18,15 @@ namespace SeleniumFirst
         public void Initialize()
         {
             PropertiesCollection.driver = new ChromeDriver();
-            PropertiesCollection.driver.Navigate().GoToUrl("http://www.executeautomation.com/demosite/index.html");
+            PropertiesCollection.driver.Navigate().GoToUrl("http://www.executeautomation.com/demosite/Login.html");
         }
         [Test]
         public void ExecuteTest()
         {
-            //Title 
-            SeleniumSetMethods.SelectDropDown("TitleId", "Mr.", PropertyType.Id);
-            //Initial
-            SeleniumSetMethods.EnterText("Initial", "Sevo", PropertyType.Name);
-            Console.WriteLine("The value from my title" + SeleniumGetMethods.GetText("TitleId", PropertyType.Id));
-            Console.WriteLine("The value from my title" + SeleniumGetMethods.GetText("Initial", PropertyType.Name));
+            LoginPageObjects pageLogin = new LoginPageObjects();
+            EAPageObjects pageEA= pageLogin.Login("sevilay", "test");
+            pageEA.FillUserForm("SA", "automation", "sevilay");
 
-            //Click
-            SeleniumSetMethods.Click("Save", PropertyType.Name);
         }
         [TearDown]
         public void CleanUp()
