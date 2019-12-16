@@ -19,6 +19,7 @@ namespace SeleniumFirst
         {
             PropertiesCollection.driver = new ChromeDriver();
             PropertiesCollection.driver.Navigate().GoToUrl("http://www.executeautomation.com/demosite/Login.html");
+            //PropertiesCollection.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
         [Test]
         public void ExecuteTest()

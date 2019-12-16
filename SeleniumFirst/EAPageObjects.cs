@@ -27,9 +27,10 @@ namespace SeleniumFirst
         public IWebElement btnSave { get; set; }
         public void FillUserForm(string initial,string middleName,string firstName)
         {
-            txtInitial.SendKeys(initial);
-            txtFirstName.SendKeys(firstName);
-            txtMiddleName.SendKeys(middleName);
+            txtInitial.EnterText(initial);
+            txtFirstName.EnterText(firstName);
+            txtMiddleName.EnterText(middleName);
+            btnSave.Clicks();
         }
     }
 }
